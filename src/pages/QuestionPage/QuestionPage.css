@@ -1,0 +1,81 @@
+.container {
+  width: 100%;
+}
+
+.top-page {
+  width: 100%;
+  margin-left: 0;
+}
+
+.question-content {
+  width: 63%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+
+  #nodata {
+    color: #ffc107;
+    text-align: center;
+    margin: 10px;
+  }
+
+  #title {
+    color: #ffc107;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+  .question-label {
+    color: white;
+    font-size: larger;
+    margin-top: 3%;
+  }
+
+  animation: question1 1s ease-out 0.7s forwards;
+}
+@keyframes question1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn-quit {
+  width: 100px;
+  margin-top: 10%;
+}
+
+.answer-content {
+  color: white;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  text-align: center;
+}
+.btn-answer {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.fade {
+  animation: question1 1s ease-out 0.7s forwards;
+}
+
+.fadeout {
+  animation: question1 1s ease-in 0.7s forwards;
+}
+@keyframes fade-in-keyframes {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,10 +1,8 @@
 import React from "react";
 import "./App.css";
 import { useTranslation } from "react-i18next";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
+import QuestionPage from "./pages/QuestionPage";
 
 import {
   createBrowserRouter,
@@ -14,6 +12,7 @@ import {
   Link,
 } from "react-router-dom";
 import { PathEnum } from "./pages/PathsEnum";
+import RankingPage from "./pages/RankingPage";
 
 const router = createBrowserRouter([
   {
@@ -27,20 +26,12 @@ const router = createBrowserRouter([
         path: PathEnum.HOME,
       },
       {
-        path: PathEnum.ABOUT,
-        element: <AboutPage />,
+        path: PathEnum.QUESTION,
+        element: <QuestionPage />,
       },
       {
-        path: PathEnum.LOGIN,
-        element: <div>This is Login Page</div>,
-      },
-      {
-        path: PathEnum.DASHBOARD,
-        element: (
-          <PrivateRoute>
-            <div>This is a private Route</div>
-          </PrivateRoute>
-        ),
+        path: PathEnum.RANKING,
+        element: <RankingPage />,
       },
     ],
   },
@@ -60,15 +51,14 @@ function LayoutComponent() {
 
   return (
     <div className="App">
-      <Link to="/home">{t("Home")}</Link>
+      {/* <Link to="/home">{t("Home")}</Link>
       <Link to="/about">{t("About")}</Link>
       <Link to="/dashboard">{t("Dashboard")}</Link>
-      <Header />
+      <Header /> */}
       <div className="App-content">
-        {t("title")}
+        {/* {t("title")} */}
         <Outlet />
       </div>
-      <Footer />
     </div>
   );
 }
