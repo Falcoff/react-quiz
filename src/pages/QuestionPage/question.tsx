@@ -2,14 +2,14 @@ import Question from "../../core/models/Question";
 
 export const questions: Question[] = [
   {
-    question: "Quel est l'ordre des épisodes 1, 2 et 3 ?",
+    question: "Quel est l'ordre des épisodes I, II et III ?",
     answers: {
       A: "Un Nouvel espoir, L’Empire contre-attaque, Le Retour du Jedi",
-      B: "La Menace fantôme, L'Empire contre-attaque, La Revanche des Sith",
-      C: "La Menace fantôme, L’Attaque des clones, La Revanche des Sith",
+      B: "La Menace fantôme, L’Attaque des clones, La Revanche des Sith",
+      C: "La Menace fantôme, L'Empire contre-attaque, La Revanche des Sith",
       D: "Star Wars I, Star Wars II, Star Wars III",
     },
-    goodAnswer: "C",
+    goodAnswer: "B",
   },
   {
     question: "Quel est le vaisseau mythique piloté par Han Solo ?",
@@ -18,6 +18,16 @@ export const questions: Question[] = [
       B: "Le Titanic",
       C: "Le Faucon Millénium",
       D: "Le Razor Crest",
+    },
+    goodAnswer: "C",
+  },
+  {
+    question: "Quelle est la race de Chewbacca ?",
+    answers: {
+      A: "Ewok",
+      B: "Tauntaun",
+      C: "Wookiee",
+      D: "Gungan",
     },
     goodAnswer: "C",
   },
@@ -33,7 +43,6 @@ export const questions: Question[] = [
     },
     goodAnswer: "B",
   },
-
   {
     question: "Les sabres lasers fonctionnent grâce à ?",
     answers: {
@@ -44,7 +53,6 @@ export const questions: Question[] = [
     },
     goodAnswer: "D",
   },
-
   {
     question: "Quel est l'ordre 66 ?",
     answers: {
@@ -55,15 +63,45 @@ export const questions: Question[] = [
     },
     goodAnswer: "B",
   },
+  {
+    question: "Qui interprète le Mandalorian dans la série du même nom ?",
+    answers: {
+      A: "Pedro Pascal",
+      B: "Andy Serkis",
+      C: "Mark Hamill",
+      D: "Ewan McGregor",
+    },
+    goodAnswer: "A",
+  },
+  {
+    question: "Pourquoi Mace Windu possède t-il un sabre laser violet ?",
+    answers: {
+      A: "Le violet est le mélange entre le bleu (associé aux Jedis) et le rouge (associé aux Siths)",
+      B: "Car le violet signifie le pouvoir et le luxe",
+      C: "C'est une demande personnelle de Samuel L. Jackson à George Lucas",
+      D: "Le sabre violet est utilisé par le garde du temple Jedi",
+    },
+    goodAnswer: "C",
+  },
+  {
+    question: "Dans la Guerre des clones, à partir de quel personnage les clones sont-ils créés ?",
+    answers: {
+      A: "Jango Fett",
+      B: "Boba Fett",
+      C: "Général Grevious",
+      D: "Ahsoka Tano",
+    },
+    goodAnswer: "A",
+  },
+  {
+    question: "Qui est de la même espèce que Grogu ?",
+    answers: {
+      A: "Jar Jar Binks",
+      B: "Jabba le Hutt",
+      C: "R2-D2",
+      D: "Yoda",
+    },
+    goodAnswer: "D",
+  },
+
 ];
-
-// C C B D B
-
-// question: "Quel est l'ordre des épisodes 1, 2 et 3 ?",
-// answers: {
-//     A: "Un Nouvel espoir, L’Empire contre-attaque, Le Retour du Jedi",
-//     B: "La Menace fantôme, L'Empire contre-attaque, La Revanche des Sith",
-//     C: "La Menace fantôme, L’Attaque des clones, La Revanche des Sith",
-//     D: "Star Wars I, Star Wars II, Star Wars III"
-// },
-// goodAnswer: 'C'

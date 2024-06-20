@@ -86,14 +86,14 @@ const RankingPage: React.FC = () => {
   return (
     <div className="container">
       <div
-        className={"question-content " + (fade ? "fade" : "")}
+        className={"ranking-content " + (fade ? "fade" : "")}
         onAnimationEnd={() => setFade(false)}
       >
         <div className="group-button">
           <button
             onClick={() => setDisplayRanking(DisplayRanking.ALL)}
             className={
-              "btn btn-quit " +
+              "btn " +
               (displayRanking === DisplayRanking.ALL
                 ? "btn-warning"
                 : "btn-outline-warning")
@@ -104,7 +104,7 @@ const RankingPage: React.FC = () => {
           <button
             onClick={() => setDisplayRanking(DisplayRanking.WEDNESDAY)}
             className={
-              "btn btn-quit " +
+              "btn " +
               (displayRanking === DisplayRanking.WEDNESDAY
                 ? "btn-warning"
                 : "btn-outline-warning")
@@ -115,7 +115,7 @@ const RankingPage: React.FC = () => {
           <button
             onClick={() => setDisplayRanking(DisplayRanking.THURSDAY)}
             className={
-              "btn btn-quit " +
+              "btn " +
               (displayRanking === DisplayRanking.THURSDAY
                 ? "btn-warning"
                 : "btn-outline-warning")
@@ -126,7 +126,7 @@ const RankingPage: React.FC = () => {
           <button
             onClick={() => setDisplayRanking(DisplayRanking.FRIDAY)}
             className={
-              "btn btn-quit " +
+              "btn " +
               (displayRanking === DisplayRanking.FRIDAY
                 ? "btn-warning"
                 : "btn-outline-warning")
@@ -142,16 +142,18 @@ const RankingPage: React.FC = () => {
         <table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Nom</th>
-              <th>Score</th>
-              <th>Temps</th>
+              <th className="rank-user">N°</th>
+              <th className="date-user">Date</th>
+              <th className="name-user">Nom</th>
+              <th className="score-user">Score</th>
+              <th className="time-user">Temps</th>
             </tr>
           </thead>
           <tbody>
             {displayedUsers.length > 0 &&
-              displayedUsers.map((user) => (
+              displayedUsers.map((user, index) => (
                 <tr key={user.email}>
+                  <th>{index+1}</th>
                   <th>
                     {new Date(user.date).toLocaleDateString() +
                       " " +

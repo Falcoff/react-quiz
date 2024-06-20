@@ -1,9 +1,61 @@
 .group-button {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-top: 10%;
+
+  button {
+    width: 100px;
+  }
 }
 
+.ranking-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+
+  #nodata {
+    color: #ffc107;
+    text-align: center;
+    margin: 10px;
+  }
+  #title {
+    color: #ffc107;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+  .question-label {
+    color: white;
+    font-size: larger;
+    margin-top: 3%;
+  }
+
+  animation: question1 1s ease-out 0.7s forwards;
+}
 .footerRanking {
   display: flex;
   margin: 32px 0;
+}
+
+.rank-user {
+  width: 4%;
+}
+
+.date-user {
+  width: 24%;
+}
+
+.name-user {
+  width: 24%;
+}
+
+.score-user {
+  width: 24%;
+}
+
+.time-user {
+  width: 24%;
 }
