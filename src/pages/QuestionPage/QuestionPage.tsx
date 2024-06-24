@@ -9,6 +9,7 @@ import Formulaire from "./Formulaire";
 import Timer, { getTimeUser } from "./Timer";
 import Results from "./Results";
 import User from "../../core/models/User";
+import mayTheForce from "../../assets/sounds/Force-with-u.mp3";
 
 const QuestionPage: React.FC = () => {
   const navigate = useNavigate();
@@ -106,10 +107,53 @@ const QuestionPage: React.FC = () => {
     return score;
   };
 
+  // useEffect(() => {
+  //   window.addEventListener("beforeunload", alertUser);
+  //   return () => {
+  //     window.removeEventListener("beforeunload", alertUser);
+  //   };
+  // }, []);
+
+  // const alertUser = (e: any) => {
+  //   e.preventDefault();
+  //   e.returnValue = "";
+  //   navigate(PathEnum.HOME)
+  // };
+
+  const [arrived] = useState(true);
+
+  useEffect(() => {
+    console.log("arrived");
+  }, [arrived]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      console.log("test");
+      const audioForce = document?.getElementById(
+        "audioForce"
+      ) as HTMLAudioElement;
+      if (audioForce?.canPlayType("audio/mp3")) {
+        // audioForce.src = mayTheForce;
+        // audioForce.load();
+        document.getElementsByClassName("question-content")[0];
+        if (audioForce.muted) {
+          audioForce.muted = false;
+          audioForce?.play();
+        }
+        // setTimeout(() => {
+        //   audioForce.pause();
+        // }, 4000);
+      }
+    }, 1000);
+  }, []);
+
   return (
     <div className="container">
       {dataUser.firstname ? (
-        <Results score={calculateScore()} questionsLength={questions.length} />
+        <Results
+          score={calculateScore()}
+          questionsLength={questions.length - 1}
+        />
       ) : (
         <>
           {showForm ? (
@@ -119,8 +163,13 @@ const QuestionPage: React.FC = () => {
               className={"question-content " + (fade ? "fadein" : "fadeout")}
               onAnimationEnd={() => setFade(false)}
             >
-              <div style={{display:"flex", justifyContent: "space-between"}}>
-                <span id="title">QUESTION {count + 1} :</span>
+              <audio id="audioForce" muted={true}>
+                <source src={mayTheForce} type="audio/mp3" />
+              </audio>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <span id="title">
+                  Question {count === 10 ? "bonus" : count + 1} :
+                </span>
                 <Timer time={time} />
               </div>
               <p className="question-label">{questions[count].question}</p>

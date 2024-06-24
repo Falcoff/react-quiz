@@ -84,7 +84,8 @@ export const questions: Question[] = [
     goodAnswer: "C",
   },
   {
-    question: "Dans la Guerre des clones, à partir de quel personnage les clones sont-ils créés ?",
+    question:
+      "Dans la Guerre des clones, à partir de quel personnage les clones sont-ils créés ?",
     answers: {
       A: "Jango Fett",
       B: "Boba Fett",
@@ -103,5 +104,14 @@ export const questions: Question[] = [
     },
     goodAnswer: "D",
   },
-
+  {
+    question: "Quel jour est considéré comme le Star Wars Day par les fans ?",
+    answers: {
+      A: "le 02 février",
+      B: "le 20 avril",
+      C: "le 04 mai",
+      D: "le 14 juillet",
+    },
+    goodAnswer: "C",
+  },
 ];

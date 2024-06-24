@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { useTranslation } from "react-i18next";
 import HomePage from "./pages/HomePage";
@@ -10,6 +10,7 @@ import {
   Outlet,
   Navigate,
   Link,
+  useNavigate,
 } from "react-router-dom";
 import { PathEnum } from "./pages/PathsEnum";
 import RankingPage from "./pages/RankingPage";
@@ -48,6 +49,10 @@ function PrivateRoute({ children }: PrivateRouteProps) {
 
 function LayoutComponent() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate(PathEnum.HOME, { replace: true });
+  }, []);
 
   return (
     <div className="App">

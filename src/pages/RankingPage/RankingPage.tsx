@@ -152,8 +152,8 @@ const RankingPage: React.FC = () => {
           <tbody>
             {displayedUsers.length > 0 &&
               displayedUsers.map((user, index) => (
-                <tr key={user.email}>
-                  <th>{index+1}</th>
+                <tr key={user.email+" "+index}>
+                  <th>{index + 1}</th>
                   <th>
                     {new Date(user.date).toLocaleDateString() +
                       " " +
@@ -163,7 +163,7 @@ const RankingPage: React.FC = () => {
                     {user.name} {user.firstname}
                   </th>
                   <th>
-                    {user.score}/{questions.length}
+                    {user.score}/{questions.length - 1}
                   </th>
                   <th>{user.time}</th>
                 </tr>
